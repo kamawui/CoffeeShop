@@ -1,0 +1,11 @@
+.coffee-range-panel {
+    margin: 0 auto;
+}
+.nav-bar {
+    width: 900px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}

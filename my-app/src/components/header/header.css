@@ -1,0 +1,29 @@
+.header {
+    width: 100%;
+    height: 260px;
+    background-color: brown;
+    font-family: 'Merienda', cursive;
+}
+.coffeeInfo {
+    display: flex;
+    margin-left: 8%;
+}
+.coffeeInfo p {
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+    color: #FFF;
+    text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    font-size: 14px;
+    font-weight: 400;
+    cursor: pointer;
+}
+h1 {
+    color: #FFF;
+    font-family: 'Merienda', cursive;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: center;
+}

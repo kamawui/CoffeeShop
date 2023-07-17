@@ -1,0 +1,41 @@
+.coffeeCard {
+    width: 220px;
+    height: 260px;
+    border-radius: 8px;
+    background: #FFF;
+    box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.25);
+    font-family: 'Merienda', cursive;
+    margin: 60px 40px 0px 40px;
+    cursor: pointer;
+}
+.emptyDiv {
+    width: 100%;
+    height: 37px;
+}
+.image {
+    width: 167px;
+    height: 115px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.name {
+    color: #000;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 12px 0px 12px 0px;
+}
+.country {
+    color: #000;
+    text-align: right;
+    font-size: 14px;
+    font-weight: 400;
+}
+.price {
+    color: #000;
+    text-align: right;
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: 12px;
+}

@@ -1,0 +1,50 @@
+.description {
+    padding: 70px;
+    display: flex;
+    justify-content: center;
+}
+.descriptionImage {
+    width: 272px;
+    height: 355px;
+    margin-left: 70px;
+    margin-right: 70px;
+}
+.descriptionText {
+    width: 346px;
+    height: 355px;
+    text-align: center;
+}
+h2 {
+    margin: 0;
+}
+.descriptionLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0px 20px 0px;
+}
+.line {
+    width: 60px;
+    height: 0.0500rem;
+    background-color: #000;
+    margin: 0px 25px 0px 25px;
+}
+.descriptionText p {
+    color: #000;
+    text-align: center;
+    font-family: 'Merienda', cursive;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+}
+.separator {
+    width: 240px;
+    height: 2px;
+    background-color: #000;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
