@@ -53,20 +53,16 @@ class App extends Component {
                     id: 6
                 },
             ],
+            term: ""
         }
         this.size = 6;
         this.dataCache = this.state.data;
     }
 
-    search = (name) => {
-        const newData = [];
-        name = name.toLowerCase();
-
-        for (let i = 0; i < this.dataCache.length; i++) {
-            if (name === this.dataCache[i].name.substring(0, name.length).toLowerCase()) {
-                newData.push(this.dataCache[i]);
-            }
-        }
+    search = (term) => {
+        const newData = this.dataCache.filter(obj => {
+            return obj.name.toLowerCase().indexOf(term.toLowerCase().trim()) > -1
+        });
 
         this.setState(({data}) => {
             return {
