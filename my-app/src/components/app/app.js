@@ -1,9 +1,9 @@
 import {Component} from "react";
 import "./app.css";
 import Header from "../header/header";
-import Description from "../main/description/description";
-import CoffeeRangePanel from "../main/coffee-range-panel/coffee-range-panel";
+import Main from "../main/main";
 import Footer from "../footer/footer";
+
 
 class App extends Component {
     constructor(props) {
@@ -107,9 +107,11 @@ class App extends Component {
         return (
             <div className="app" >
                 <Header />
-                <Description />
-                <CoffeeRangePanel data={this.state.data} search={this.search} showAll={this.showAll}
-                                  filterBrazil={this.filterBrazil} filterKenya={this.filterKenya} filterColumbia={this.filterColumbia}/>
+                <Main data={this.state.data} search={this.search} showAll={this.showAll}
+                      filterBrazil={this.filterBrazil} filterKenya={this.filterKenya} filterColumbia={this.filterColumbia}/>
+                {/*<Description />*/}
+                {/*<CoffeeRangePanel data={this.state.data} search={this.search} showAll={this.showAll}*/}
+                {/*                  filterBrazil={this.filterBrazil} filterKenya={this.filterKenya} filterColumbia={this.filterColumbia}/>*/}
                 <Footer />
             </div>
         )
