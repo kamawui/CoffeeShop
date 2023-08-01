@@ -1,3 +1,6 @@
+.wrapper {
+    margin-top: 20px;
+}
 .description {
     padding: 70px;
     display: flex;
@@ -5,7 +8,6 @@
 }
 .descriptionImage {
     width: 272px;
-    height: 355px;
     margin-left: 70px;
     margin-right: 70px;
 }
@@ -47,4 +49,31 @@ h2 {
     margin-right: auto;
     margin-top: 60px;
     margin-bottom: 60px;
+}
+
+@media (max-width: 445px) {
+    .description {
+        flex-direction: column-reverse;
+        align-items: center;
+        padding: 0;
+    }
+    .descriptionImage {
+        width: 160px;
+        height: 200px;
+        margin-top: 30px;
+        display: none;
+    }
+    .descriptionText {
+        margin-top: 20px;
+    }
+    .descriptionText p {
+        font-size: 12px;
+    }
+    .descriptionText {
+        width: 260px;
+        text-align: center;
+    }
+    .separator {
+        width: 80%;
+    }
 }

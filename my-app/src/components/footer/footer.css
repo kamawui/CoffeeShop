@@ -23,9 +23,37 @@
     justify-content: center;
     align-items: center;
 }
+.coffeeLogo {
+    width: 30px;
+    height: 30px;
+}
 .line {
     width: 60px;
     height: 2px;
     background-color: #000;
     margin: 0px 25px 0px 25px;
+}
+@media (max-width: 445px) {
+    .footer {
+        margin-top: 60px;
+    }
+    .footerLogo {
+        margin-top: 40px;
+    }
+    .coffeeLogo {
+        width: 30px;
+        height: 30px;
+    }
+    .coffeeSVG {
+        display: none;
+    }
+    .line {
+        width: 40px;
+        height: 2px;
+        margin: 0px 15px 0px 15px;
+    }
+    .footerInfo p {
+        padding: 0;
+        margin: 0px 10px 0px 10px;
+    }
 }

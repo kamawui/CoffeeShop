@@ -1,6 +1,12 @@
 .itemsGroup {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     width: 900px;
     margin: 0 auto;
+}
+@media (max-width: 445px) {
+    .itemsGroup {
+        width: 100%;
+    }
 }
