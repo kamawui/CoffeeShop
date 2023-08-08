@@ -8,7 +8,7 @@
     display: flex;
     margin-left: 8%;
 }
-.coffeeInfo p {
+.coffeeInfo a {
     display: flex;
     align-items: flex-end;
     padding: 20px;
@@ -43,7 +43,7 @@ h1 {
         margin: 0;
         display: none;
     }
-    .coffeeInfo p {
+    .coffeeInfo a {
         font-size: 11px;
         white-space: nowrap;
     }

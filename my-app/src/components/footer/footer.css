@@ -8,7 +8,7 @@
     display: flex;
     justify-content: center;
 }
-.footerInfo p {
+.footerInfo a {
     display: flex;
     align-items: flex-end;
     padding: 20px;
@@ -52,7 +52,7 @@
         height: 2px;
         margin: 0px 15px 0px 15px;
     }
-    .footerInfo p {
+    .footerInfo a {
         padding: 0;
         margin: 0px 10px 0px 10px;
     }

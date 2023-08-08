@@ -7,12 +7,12 @@ class CoffeeSearch extends Component {
     }
 
     render() {
-        const {search} = this.props;
+        const {data} = this.props;
 
         return (
             <div className="coffeeSearch">
                 <form>
-                    <label>Looking for</label>
+                    <label>{data}</label>
                     <input onChange={this.onValueChange} type="text" placeholder="start typing here..."/>
                 </form>
             </div>
