@@ -120,63 +120,49 @@ class App extends Component {
                     id: 6
                 },
             ],
-            term: ""
+            term: "",
+            filter: "",
         }
         this.size = 6;
         this.dataCache = this.state.data;
     }
 
-    search = (term) => {
-        const newData = this.dataCache.filter(obj => {
-            return obj.name.toLowerCase().indexOf(term.toLowerCase().trim()) > -1
-        });
+    updateSearch = (term) => {
+        this.setState({term});
+    }
 
-        this.setState(({data}) => {
-            return {
-                data: newData
-            }
+    updateFilter = (filter) => {
+        this.setState({filter});
+    }
+
+    search = (items, term) => {
+        if (term.length === 0) {
+            return items;
+        }
+
+        return items.filter(item => {
+            return item.name.toLowerCase().indexOf(term.toLowerCase()) > -1;
         })
     }
 
-    showAll = () => {
-        this.setState(({data}) => {
-            return {
-                data: this.dataCache
-            }
-        })
-    }
+    filter = (items, filter) => {
+        if (filter.length === 0) {
+            return items;
+        }
 
-    filterBrazil = () => {
-        this.setState(({data}) => {
-            return {
-                data: this.dataCache.filter(obj => obj.country === "Brazil")
-            }
-        })
-    }
-
-    filterKenya = () => {
-        this.setState(({data}) => {
-            return {
-                data: this.dataCache.filter(obj => obj.country === "Kenya")
-            }
-        })
-    }
-
-    filterColumbia = () => {
-        this.setState(({data}) => {
-            return {
-                data: this.dataCache.filter(obj => obj.country === "Columbia")
-            }
-        })
+        return items.filter(item => item.country.toLowerCase() === filter);
     }
 
     render() {
+        const {data, term, filter} = this.state;
+
+        const visibleData = this.search(this.filter(data, filter), term);
+
         return (
             <div className="app" >
                 <Header data={this.state.headerData}/>
                 <Main descriptionData={this.state.descriptionData} logo={this.state.logoData.logo} goodsPanelData={this.state.goodsPanelContent}
-                      data={this.state.data} search={this.search} showAll={this.showAll}
-                      filterBrazil={this.filterBrazil} filterKenya={this.filterKenya} filterColumbia={this.filterColumbia}
+                      data={visibleData} search={this.updateSearch} filter={this.updateFilter}
                       burgerLogo={this.state.logoData.burger}/>
                 <Footer data={this.state.footerData} logo={this.state.logoData.logo}/>
             </div>

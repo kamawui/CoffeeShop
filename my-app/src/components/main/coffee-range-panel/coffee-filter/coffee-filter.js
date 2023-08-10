@@ -6,14 +6,15 @@ class CoffeeFilter extends Component {
         super(props);
         this.state = {
             filters: [
-                {title: "All", function: this.props.showAll},
-                {title: "Brazil", function: this.props.filterBrazil},
-                {title: "Kenya", function: this.props.filterKenya},
-                {title: "Columbia", function: this.props.filterColumbia},
+                {title: "All", tag: "", /*function: this.props.showAll*/},
+                {title: "Brazil", tag: "brazil", /*function: this.props.filterBrazil*/},
+                {title: "Kenya", tag: "kenya", /*function: this.props.filterKenya*/},
+                {title: "Columbia", tag: "columbia", /*function: this.props.filterColumbia*/},
             ],
             dropdownValue: "All"
         }
     }
+
     showDropdown = () => {
         document.querySelector(".dropdown-content").classList.toggle("active");
     }
@@ -24,29 +25,32 @@ class CoffeeFilter extends Component {
                  dropdownValue: value.title
              }
          })
-         value.function();
+
+         this.props.filter(value.tag);
+
          this.showDropdown();
     }
 
     render() {
-        const {data, showAll, filterBrazil, filterKenya, filterColumbia, burgerLogo} = this.props;
+        const {data, filter, burgerLogo} = this.props;
+        const {filters} = this.state;
 
         return (
             <div className="coffeeFilter">
                 <p className="filter-label">{data}</p>
-                <button className="all btn-filter" onClick={showAll}>{this.state.filters[0].title}</button>
-                <button className="brazil btn-filter" onClick={filterBrazil}>{this.state.filters[1].title}</button>
-                <button className="kenya btn-filter" onClick={filterKenya}>{this.state.filters[2].title}</button>
-                <button className="columbia btn-filter" onClick={filterColumbia}>{this.state.filters[3].title}</button>
+                <button className="all btn-filter" onClick={() => filter(filters[0].tag)}>{filters[0].title}</button>
+                <button className="brazil btn-filter" onClick={() => filter(filters[1].tag)}>{filters[1].title}</button>
+                <button className="kenya btn-filter" onClick={() => filter(filters[2].tag)}>{filters[2].title}</button>
+                <button className="columbia btn-filter" onClick={() => filter(filters[3].tag)}>{filters[3].title}</button>
 
                 <div className="dropdown-menu">
                     <div className="dropdown-value">{this.state.dropdownValue}</div>
                     <button className="dropdown" onClick={() => this.showDropdown()}>{burgerLogo}</button>
                     <div className="dropdown-content">
-                        <p onClick={() => this.dropdownFilter(this.state.filters[0])}>{this.state.filters[0].title}</p>
-                        <p onClick={() => this.dropdownFilter(this.state.filters[1])}>{this.state.filters[1].title}</p>
-                        <p onClick={() => this.dropdownFilter(this.state.filters[2])}>{this.state.filters[2].title}</p>
-                        <p onClick={() => this.dropdownFilter(this.state.filters[3])}>{this.state.filters[3].title}</p>
+                        <p onClick={() => this.dropdownFilter(filters[0])}>{filters[0].title}</p>
+                        <p onClick={() => this.dropdownFilter(filters[1])}>{filters[1].title}</p>
+                        <p onClick={() => this.dropdownFilter(filters[2])}>{filters[2].title}</p>
+                        <p onClick={() => this.dropdownFilter(filters[3])}>{filters[3].title}</p>
                     </div>
                 </div>
             </div>
